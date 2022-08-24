@@ -1,0 +1,41 @@
+﻿@model IEnumerable<NordicTransportFinal.Data.Models.Domain.HighwayToll>
+
+@{
+    ViewBag.Title = "GetHighwayTolls";
+}
+
+<style>
+    .stylecontainer {
+        margin: 2%;
+        margin-top: 5%;
+    }
+</style>
+
+<h2 class="stylecontainer">Highway Tolls</h2>
+
+<p class="stylecontainer">
+    @Html.ActionLink("Add Highway Toll", "AddHighwayToll")
+</p>
+<table class="table stylecontainer">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TollPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TollName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TollPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TollName)
+        </td>
+    </tr>
+}
+
+</table>

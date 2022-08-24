@@ -1,0 +1,42 @@
+﻿@model IEnumerable<NordicTransportFinal.Data.Models.Domain.Location>
+
+@{
+    ViewBag.Title = "GetLocations";
+}
+
+<style>
+    .stylecontainer {
+        margin: 2%;
+        margin-top: 5%;
+    }
+</style>
+
+<h2 class="stylecontainer">Locations</h2>
+
+<p class="stylecontainer">
+    @Html.ActionLink("Add Location", "AddLocation")
+</p>
+<table class="table stylecontainer">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationAddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationAddress)
+        </td>
+
+    </tr>
+}
+
+</table>

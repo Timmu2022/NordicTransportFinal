@@ -1,0 +1,38 @@
+﻿@model IEnumerable<NordicTransportFinal.Data.Models.Domain.Contract>
+
+@{
+    ViewBag.Title = "GetContracts";
+}
+
+<style>
+    .stylecontainer {
+        margin: 2%;
+        margin-top: 5%;
+    }
+</style>
+
+<table class="table stylecontainer">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractLength)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractLength)
+        </td>
+        <td>
+        </td>
+    </tr>
+}
+
+</table>
